@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>체크박스 활용하기</title>
     <script>
-        document.addEventListener("DOMContetLoaded", ()=>{
+        document.addEventListener("DOMContentLoaded", ()=>{
             const button = document.createElement("button");
             const input = document.createElement("input");
             const span = document.createElement("span");
-            const hi = document.createElement("h1");
+            const h1 = document.createElement("h1");
             document.body.append(input,span,h1,button)
             input.setAttribute('type', 'checkbox');
             span.append('타이머활성화')
             button.append('초기화')
             h1.innerHTML = '0 초'
 
-            let[timer,id] = [0,0]
+            let [timer,id] =[0,0]
             input.addEventListener('change',(event)=>{
                 if(event.currentTarget.checked){
                     id = setInterval(()=>{
@@ -26,9 +26,11 @@
                     },1000)
                 }else{
                     clearInterval(id)
+                }
             }
-        }
-    })
+            )
+            // input.checked = false
+        })
     </script>
 </head>
 <body>
