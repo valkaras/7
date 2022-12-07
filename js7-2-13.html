@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할 일 목록 만들기</title>
+</head>
+<body>
+    <h1> 할 일 목록</h1>
+    <input id="todo">
+    <button id="add-button">추가하기</button>
+    <div id="todo-list">
+
+
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 문서 객체를 가져옵니다.
+        const input = document.querySelector('#todo')
+        const todoList = document.querySelector('#todo-list')
+        const addButton = document.querySelector('#add-button')
+
+        // 변수를 선언합니다.
+        let keyCount = 0
+
+        // 함수를 선언합니다.
+        const addTodo = () => {
+            // 입력 양식에 내용이 없으면 추가하지 않습니다.
+            if (input.value.trim() === '') {
+                alert('할 일을 입력해주세요.')
+                return
+            }
+
+            // 문서 객체를 설정합니다.
+            const item = document.createElement('div')
+            const checkbox = document.createElement('input')
+            const text = document.createElement('span')
+            const button = document.createElement('button')
+
+            // 문서 객체를 식별할 키를 생성합니다.
+            const key = keyCount
+            keyCount += 1
+            
+
+        }
+    })
+</script>
+</html>
