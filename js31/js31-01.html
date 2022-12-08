@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로컬스토리지 배열 응용</title>
+    <title>로컬스토리지 배열 응용2(기능추가)</title>
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
     <style>
         button{
             margin: 5px
         }
     </style>
     <script>
+        
+        
         document.addEventListener("DOMContentLoaded",()=>{
             const p1 = document.createElement("p");
             const p2 = document.createElement("p");
@@ -26,6 +29,8 @@
             del.innerHTML = '요소모두삭제'
             fix.innerHTML = '중복제거'
             sort.innerHTML = '정렬'
+            
+                
             // input.setAttribute('type', 'text')
             let ready = localStorage.getItem('mem')??'null이야 돔항쳐!!'
             let arr = []
@@ -47,7 +52,8 @@
                 }else{
                     p1.innerHTML = '값을 넣으세요.'
                 }
-                localStorage.setItem('mem',arr)
+                localStorage.setItem('mem',arr)                
+                fx()
             })
             pop.addEventListener('click',(e)=>{
                 const pp = arr.pop()
@@ -56,6 +62,7 @@
                 p1.innerHTML = pp ? `${pp}를 제거 하였습니다` : '배열이 비었습니다.'
                 p2.innerHTML = arr
                 localStorage.setItem('mem',arr)
+                fx()
             })
             del.addEventListener('click',(e)=>{
                 arr.length = 0
@@ -82,22 +89,25 @@
                 p2.innerHTML = arr
                 localStorage.setItem('mem',arr)
             })
+            function fx(){
+                new TypeIt(p1)
+                .pause(1000)
+                .delete(p1.length,{delay: 1000})                
+                .type('localStorage 에서 값을 가져왔습니다.')
+                .pause(100)
+                .delete(26,{delay: 1000}) 
+                .type(arr)                               
+                .go()}
         })
     </script>
 </head>
 <body>
     <!-- <pre><h2>
-        배열이 기록
-        배열에 요소 입력 
-        push
-        
-        배열에 요소 삭제
-        pop
-        로컬스토리지에 저장되고 삭제되도록 하라.
-        F5를 눌러도 값이 사라지지 않는다.
-        추가사항:
-        모든 요소 삭제 버튼 한개
-        중복 제거 버튼 한개.
+        이전내용 추가
+        1. 추가버튼: 엔터를 쳐도 기능이 되게하라.
+        2. 중복제거: 기능추가 빈칸요소도 없애기
+        3. 요소모두삭제: 팝업으로 삭제할까요?
+        라고 확인창 뜨기. (예yes =>삭제, no => 취소)
     </h2></pre> -->
 </body>
 </html>
