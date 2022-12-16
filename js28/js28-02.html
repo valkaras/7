@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>체크일때 링크 활성화</title>
     <script>
-       document.addEventListener('DOMContentLoaded', ()=>{
-        const input = document.createElement("input");
-        const span = document.createElement("span");
-        const br = document.createElement("br");
-        const a = document.createElement('a');
-        document.body.append(input,span,br)
+        document.addEventListener("DOMContentLoaded", ()=>{
+            const input = document.createElement("input");
+            const span = document.createElement("span");
+            const br = document.createElement("br");
+            const a = document.createElement("a");
+            document.body.append(input,span,br)
 
-        input.setAttribute("type", "checkbox");
-        a.setAttribute("href", "http://naver.com");
-        span.textContent = '링크 활성화'
-        a.textContent = '네이버 이동'
-       })
+            input.setAttribute("type", "checkbox");
+            a.setAttribute("href", "http://naver.com");
+            span.textContent = '링크 활성화'
+            a.textContent = '네이버 이동'
 
 
+
+        })
     </script>
 </head>
 <body>

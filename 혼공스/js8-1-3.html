@@ -4,20 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>try catch 구문의 사용</title>
 </head>
 <body>
     <script>
-        let a = 0.1
-        let b = 0.2
-        let c = a + b
-        console.log(c)
-
-        let aa = 0
-        for (let i =0; i<100 ; i++){
-            aa += 0.1
+        try {
+            willExcept.byeBye()
+            console.log("try 구문의 마지막 줄")
+        } catch (exception) {
+            console.log("catch 구문의 마지막 줄")
         }
-        console.log(aa)
     </script>
+    
 </body>
 </html>

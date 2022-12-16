@@ -14,25 +14,23 @@
             button.textContent = '지우기'
             input.setAttribute('type','text')
 
-
             const saveValue = localStorage.getItem('input')
             if(saveValue){
                 input.value = saveValue
-                p.textContent = `이전 실행 떄의 마지막 값: ${saveValue}`
+                p.textContent = `이전 실행 때의 마지막 값: ${saveValue}`
             }
 
             input.addEventListener("keyup", (e)=>{
                 const value = e.currentTarget.value
-                localStorage.setItem('input',valve)                                
+                localStorage.setItem('input',value)
             })
             button.addEventListener("click", (e)=>{
                 localStorage.clear()
                 input.value = ''
             })
-        
-        
+
         })
-    </script>
+   </script>     
 </head>
 <body>
     
